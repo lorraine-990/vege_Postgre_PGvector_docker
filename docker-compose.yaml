@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgres:
+    build: .
+    container_name: my_postgres_14_pgvector
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: lorraine
+      POSTGRES_PASSWORD: "0000"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
